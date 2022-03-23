@@ -1,0 +1,14 @@
+h1 Pages#index
+p Find me in app/views/pages/index.html.erb
+div data-controller='pages'
+  a data-count="#{@count.to_i}" data-reflex="click->Counter#increment" data-step="1" href="#"
+    | Increment #{@count.to_i}
+
+  button data-reflex='click->Counter#show' data-reflex-root='#bloque' data-value="#{@show_block == true ? false : true}"
+    |Click Me
+
+  div#bloque
+    =@show_block
+    -if @show_block
+      div[style="width: 100px; height: 100px; background-color: red;" ]
+        |Hola
